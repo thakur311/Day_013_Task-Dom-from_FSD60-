@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission to Table</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="number"],textarea, select{
+            padding: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            width: 48%;
+        }
+        
+        .food-options {
+            display: block;
+            margin: 5px 0;
+            display: inline-block;
+            margin-right: 15px;
+        }
+       
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1 id="title">Fill the Form</h1>
+    <p id="description"> Here we are creating a  from using html css and dom ,the form should contain first name,last name, adress,pincode gender, 
+        choice of food(at least two out of 5),state,country. On submission the form must append to table and the column of the table
+        must contain  first name,last name, adress,pincode gender, choice of food,state,country and after updating the form must get
+        clear. </p>
+    <form id="form">
+        <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="first-name" placeholder="first-name" name="first-name" required>
+        
+        <label for="lname">Last Name</label>
+        <input type="text" id="last-name" placeholder="last-name" name="lname" required>
+        
+        <label for="address">Address</label>
+        <textarea type="text" id="address" placeholder="adress" name="address" required></textarea>
+        
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" placeholder="pincode" name="pincode" required>
+        
+      <h3>Gender</h3>
+        <div class="form-row">
+            <div>
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        
+     <h3>Choice of Food (Select at least two)</h3>
+        <input type="checkbox" id="food1" name="food" value="Pizza" class="food-options">
+        <label for="food1">Pizza</label><br>
+        
+        <input type="checkbox" id="food2" name="food" value="Burger" class="food-options">
+        <label for="food2">Burger</label><br>
+        
+        <input type="checkbox" id="food3" name="food" value="Pasta" class="food-options">
+        <label for="food3">Pasta</label><br>
+        
+        <input type="checkbox" id="food4" name="food" value="Sushi" class="food-options">
+        <label for="food4">Sushi</label><br>
+        
+        <input type="checkbox" id="food5" name="food" value="Salad" class="food-options">
+        <label for="food5">Salad</label><br>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" required>
+
+        <button id="submit" class="btn btn-primary" type="submit">Submit</button>
+</div>
+    </form>
+<h2>Submitted Data</h2>
+<div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Gender</th>
+            <th>Food Choice</th>
+            <th>State</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+</div>
+
+
+<script src="script.js"></script>
+
+<script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+</body>
+</html>
